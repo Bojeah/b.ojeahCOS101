@@ -10,4 +10,3 @@ fn main() {
     // ci is the compound interest after 5 years
 	let ci = a - p;
 	println!("The compound interest sterling bank would get from the Ibeju local Government Chairman after 5 year is {:.2}", ci);
-}
