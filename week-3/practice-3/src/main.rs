@@ -5,6 +5,7 @@ let cost:f64 = 15000.00;   //double precision
 
 println!("result value is {}",result );
 println!("interest is {}",interest );
+
 println!("cost is {}",cost );
 
 
