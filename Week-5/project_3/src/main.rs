@@ -15,87 +15,32 @@ fn main() {
 
             ATTENTION!!! CUSTOMERS WITH ORDERS ABOVE N1000 GET 5% OFF THEIR ORDER!!!
 ");
+  let menu_prices:[f32;5] = [3200.0, 3000.0, 2500.0, 2000.0, 2500.0];
+  let menu_items:[&str;5] = ["Poundo Yam/Edinkaiko Soup", "Fried Rice & Chicken", "Amala & Ewedu Soup", "Eba & Egusi Soup","White Rice & Stew"];
 loop{
-let p:f32 = 3200.0;
-let f:f32 = 3000.0;
-let a:f32 = 2500.0;
-let e:f32 = 2000.0;
-let w:f32 = 2500.0;
+ println!("PLEASE ENTER THE ITEM NO. OF WHAT YOU WOULD LIKE TO ORDER");
 
-
-//this  is  very unnecessary but i just think it makes the code more personalized
-let pp = "Poundo Yam/Edinkaiko Soup";
-let ff = "Fried Rice & Chicken";
-let aa = "Amala & Ewedu Soup";
-let ee = "Eba & Egusi Soup";
-let ww = "White Rice & Stew";
-  println!("PLEASE ENTER THE ITEM NO. OF WHAT YOU WOULD LIKE TO ORDER");
-  let mut t = String::new();
-  io::stdin().read_line(&mut t).expect("Not valid string");
-  let t = t.trim();
-
-  if t == "1"{
-
-   println!("\nHow many portions of {} would you like to order", pp);
-    }
-
-    else if t == "2"{
-   println!("\nHow many portions of {} would you like to order", ff);
-    }
-
-   else if t == "3"{
-   println!("\nHow many portions of {} would you like to order", aa);
-    }
-
-    else if t == "4"{
-   println!("\nHow many portions of {} would you like to order", ee);
-    }
-
-    else if t == "5"{
-   println!("\nHow many portions of {} would you like to order", ww);
-    } 
-
-    else {println!("\nERROR!! Not an item number on the menu. Try again");continue;
-    }
-
-
-  let mut q = String::new();
-  io::stdin().read_line(&mut q).expect("Not a valid string");
-  let q:f32 = q.trim().parse().expect("Not a valid number ");
+  let mut input1 = String::new();
+  io::stdin().read_line(&mut input1).expect("Not valid string");
+  let input1:i32 = input1.trim().parse().expect("Not a valid number");
   
-  let mut c = 0.0;
+  println!("\nHow many portions of {} would you like to order", menu_items[(input1 - 1) as usize]);
 
-  if t == "1"{let j = p * q;
-    println!("\nThe total cost of your order is N{}",j);
-    c += j;
-    }
+  let mut quantity = String::new();
+  io::stdin().read_line(&mut quantity).expect("Not a valid string");
+  let quantity:f32 = quantity.trim().parse().expect("Not a valid number");
+  
+  let total_amount = menu_prices[(input1 - 1) as usize] * quantity;
 
-    else if t == "2"{ let j = f * q;
-    println!("\nThe total cost of your order is N{}",j);
-         c += j;
-    }
+ println!("\nThe total cost of your order is N{}",total_amount);
 
-    else if t == "3"{ let j = a * q;
-    println!("\nThe total cost of your order is N{}",j);
-         c += j;
-    }
-
-    else if t == "4"{ let j = e * q;
-    println!("\nThe total cost of your order is N{}",j);
-     c += j;
-    }
-
-    else if t == "5"{let j = w * q;
-    println!("\nThe total cost of your order is N{}",j);
-       c += j;
-    }
-      
-
-       if c > 10000.0{
+       if total_amount > 10000.0{
         println!("\nYour order is above N10,000");
         println!("\nHOORAY!! YOU QUALIFY FOR THE DISCOUNT");
-        let f = c - (c * 0.05);
-        println!("\nYour discounted cost is N{}", f);
+
+
+        let discounted_amount = total_amount * 0.95;
+        println!("\nYour discounted cost is N{}", discounted_amount);
       } 
 
       println!("\nEnjoy your meal");break;
