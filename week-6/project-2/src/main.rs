@@ -1,15 +1,20 @@
 use std::io;
 fn main(){
 
-    let mut name = String::new();
-    let mut paper_num= String::new();
-
     println!("RESEARCHERS PUBLICATION INCENTIVE SYSTEM (RPIS)
              by the Nigerian Researchers Guide (NRG)");
 
     println!("\nplease fill in the form with the required information to detremine your annual incentive");
 
-    for _ in 0..500{
+
+
+    for x in 1..=500{
+
+    let mut name = String::new();
+    let mut paper_num= String::new();
+
+
+     println!("\nRESEARCHER NO. : {}",x );
 
     println!("\nFULLNAME:");
     io::stdin().read_line(&mut name).expect("Not a valid string ");
@@ -17,7 +22,7 @@ fn main(){
 
     println!("\nNUMBER OF PAPERS PUBLISHED");
     io::stdin().read_line(&mut paper_num).expect("Not a valid string ");
-    let paper_num:i32 = paper_num.trim().parse().expect("Not a valid number");
+    let paper_num:i32 = paper_num.trim().parse().expect("Not a valid number");     
 
     if paper_num >= 3 && paper_num <= 5{
 

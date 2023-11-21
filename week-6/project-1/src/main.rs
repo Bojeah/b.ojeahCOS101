@@ -3,6 +3,7 @@ fn main(){
 
     println!("PAU 2023 STUDENT COUNCIL ELECTION PORTAL");
     println!("please input your details below");
+    for x in 1..=150{
     loop{
     let mut stu_name = String::new();
     let mut stu_mail = String::new();
@@ -12,9 +13,7 @@ fn main(){
     let mut stu_cgpa = String::new();
     let mut class_rep = String::new();
 
-    
- for _ in 0..150{
-    println!("\nFULLNAME:");
+    println!("\nFullname:");
     io::stdin().read_line(&mut stu_name).expect("Not a valid string");
     let stu_name = stu_name.trim().to_uppercase();
     
@@ -24,7 +23,7 @@ fn main(){
     let stu_mail = stu_mail.trim();
 
 
-    println!("\ndepartment (In full):");
+    println!("\nDepartment (In full):");
     io::stdin().read_line(&mut department).expect("Not a valid string");
     let department = department.trim().to_lowercase();
 
@@ -43,7 +42,7 @@ fn main(){
         break;
        }
 
-    println!("\nlevel:");
+    println!("\nLevel:");
     io::stdin().read_line(&mut stu_level).expect("Not a valid string");
     let stu_level = stu_level.trim();
 
@@ -89,15 +88,17 @@ fn main(){
             \nNAME: {}
             \nEMAIL: {}
             \nDEPARTMENT:{}
-            \nSTATE OF ORIGIN: {}",stu_name, stu_mail, department,stu_origin);
-
+            \nSTATE OF ORIGIN: {}
+            \nCANDIDATE NO.: {}",stu_name, stu_mail, department,stu_origin,x);
+        
         println!("\nYOU CAN VOTE");
+    
         break;
      }
 
    else{
     println!("\nSORRY, YOU ARE NOT ELIGIBLE TO VOTE");
-    break;
+    continue;
 
 }
 }
