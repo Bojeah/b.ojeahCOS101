@@ -24,13 +24,13 @@ loop{
   io::stdin().read_line(&mut input1).expect("Not valid string");
   let input1:i32 = input1.trim().parse().expect("Not a valid number");
   
-  println!("\nHow many portions of {} would you like to order", menu_items[(input1 - 1) as usize]);
+  println!("\nHow many portions of {} would you like to order", menu_items[input1 - 1]);
 
   let mut quantity = String::new();
   io::stdin().read_line(&mut quantity).expect("Not a valid string");
   let quantity:f32 = quantity.trim().parse().expect("Not a valid number");
   
-  let total_amount = menu_prices[(input1 - 1) as usize] * quantity;
+  let total_amount = menu_prices[input1 - 1] * quantity;
 
  println!("\nThe total cost of your order is N{}",total_amount);
 
