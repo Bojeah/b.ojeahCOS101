@@ -1,7 +1,7 @@
 use std::io;
 fn main(){
 
-    prinln!("PUBLIC SERVICE APS LEVEL CHECKER 
+    println!("PUBLIC SERVICE APS LEVEL CHECKER 
         BY the Federal Government Of Nigeria");
 
 let mut input1 = String::new();
@@ -10,7 +10,6 @@ io::stdin().read_line(&mut input1).expect("Failed to read input");
 let staff_num = input1.trim().parse().expect("invalid input");
 
 let mut name: Vec<String> = Vec::new();
-// let mut experience = Vec::new();
 let mut occupation: Vec<String> = Vec::new();
 let mut rank: Vec<String> = Vec::new();
 let mut position: Vec<&str> = Vec::new();
