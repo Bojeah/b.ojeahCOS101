@@ -8,7 +8,7 @@ fn main(){
 
     let mut info_name: Vec<String> = Vec::new();
     let mut info_age:Vec<u16> = Vec::new();
-    let mut info_marr_sta = Vec::new();
+    let mut info_marr_sta:Vec<String> = Vec::new();
     let mut info_sib_sta = Vec::new();
     let mut info_sib_sch1 = Vec::new();
     let mut info_sib_course = Vec::new();
@@ -67,6 +67,20 @@ fn main(){
                 
                  info_sib_sta.push(sib_sta);
              }
+
+             else if sib_sta == "WORKER"{
+                let sib_sch1 = "N/A".to_string();
+                let sib_course = "N/A".to_string();
+
+                info_sib_sch1.push(sib_sch1);
+                info_sib_course.push(sib_course);
+                info_sib_sta.push(sib_sta);
+             }
+              let sib_kids = 0;
+              let sib_reside = "N/A".to_string();
+
+              info_sib_kids.push(sib_kids);
+              info_sib_reside.push(sib_reside);
          }             
 
                 else if marr_sta == "MARRIED"{
@@ -79,16 +93,26 @@ fn main(){
                     io::stdin().read_line(&mut input9).expect("Failed to read input");
                     let sib_reside = input9.trim().to_uppercase();
                     info_sib_reside.push(sib_reside);
-                
+            
+                    let sib_sta = "N/a".to_string(); 
+                    info_sib_sta.push(sib_sta); 
 
+                    let sib_sch1 = "N/A".to_string();
+                    let sib_course = "N/A".to_string(); 
+
+                    info_sib_course.push(sib_course);
+                    info_sib_sch1.push(sib_sch1);
+             
             }
-            // let sib_waec:str = "N/a";
-            // let sib_sch2:str = "N/a";
-            // let sib_level:str = "N/a";
-
-            // info_sib_waec.push(sib_waec);
-            // info_sib_level.push(sib_level);
-            // info_sib_sch2.push(sib_sch2);
+            let sib_waec = "N/a".to_string();
+            let sib_sch2 = "N/a".to_string();
+            let sib_level = "N/a".to_string();
+           
+            
+            info_sib_waec.push(sib_waec);
+            info_sib_level.push(sib_level);
+            info_sib_sch2.push(sib_sch2);
+            info_marr_sta.push(marr_sta);
         }
             
         
@@ -103,6 +127,9 @@ fn main(){
                 io::stdin().read_line(&mut input11).expect("Failed to read input");
                 let sib_sch2 = input11.trim().to_uppercase();
                 info_sib_sch2.push(sib_sch2);
+
+                let sib_level = "N/A".to_string();
+                info_sib_level.push(sib_level)
             }
             
             else if sib_waec == "no"{
@@ -110,9 +137,31 @@ fn main(){
                 io::stdin().read_line(&mut input12).expect("Failed to read input");
                 let sib_level = input12.trim().to_uppercase();
                 info_sib_level.push(sib_level);
+
+                let sib_sch2 = "N/A".to_string();
+                 info_sib_sch2.push(sib_sch2);
+
+            }
+
+            else{
+                println!("Invalid input");
+                break;
             }
             
             info_sib_waec.push(sib_waec);
+            let marr_sta = "N/A".to_string();
+            let sib_sta = "N/A".to_string();
+            let sib_sch1 = "N/A".to_string();
+            let sib_course = "N/A".to_string();
+            let sib_kids = 0;
+            let sib_reside = "N/A".to_string();
+            
+            info_marr_sta.push(marr_sta);
+            info_sib_sch1.push(sib_sch1);
+            info_sib_course.push(sib_course);
+            info_sib_sta.push(sib_sta);
+            info_sib_kids.push(sib_kids);
+            info_sib_reside.push(sib_reside);
         }
         
         info_name.push(sib_name);
@@ -121,8 +170,8 @@ fn main(){
       
         for n in 0..sib_num{
             println!("\nSIBLING {} INFORMATION", n+1);
-            println!("Name : {}\n", info_name[n] );
-            println!("Age : {}\n", info_age[n] );
+            println!("Name : {}", info_name[n] );
+            println!("Age : {}", info_age[n] );
             println!("Marital status: {}", info_marr_sta[n]);
             println!("Occupation: {}", info_sib_sta[n]);
             println!("School of study: {}", info_sib_sch1[n]);
