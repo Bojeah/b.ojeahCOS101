@@ -8,8 +8,7 @@ fn main(){
     println!("In main {:?}",v);
 }
 
-fn display(v:Vec<i32>)->Vec<i32> {
+fn display(v:Vec<i32>) {
     //returning same vector
     println!("inside display {:?}",v);
-    return v
 }
