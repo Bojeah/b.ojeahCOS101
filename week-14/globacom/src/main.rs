@@ -4,7 +4,7 @@ use::std::io;
 fn main(){
     
     println!("Please enter: \n(A) If you are an administrator \n(P) If you are a project manager 
-(S) If you are a staff member \n(C) If you are a customer \n(V) If you are a customer");
+(S) If you are a staff member \n(C) If you are a customer \n(V) If you are a vendor");
    
     let mut response = String::new();
     io::stdin().read_line(&mut response).expect("failed to read");
@@ -13,7 +13,7 @@ fn main(){
     let input = ["a", "p", "e", "c", "v"];
     let user = [administrator_table, projectmanager_table, employee_table, customer_table, vendor_table];
 
-    for x in 0..4 {
+    for x in 0..5 {
      
      if response == input[x]{
 
